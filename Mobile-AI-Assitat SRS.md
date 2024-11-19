@@ -1,6 +1,6 @@
 
 Them：Mobile GPT Assitant with vioce
-
+[Keriyar/Mobile-AI-Assitant: Mobile GPT Assitant with vioce](https://github.com/Keriyar/Mobile-AI-Assitant)
 ### 1. 项目概述
 - **项目名称**：AI Vioce Assitant
 - **项目背景**：构建一个带有语音功能的AI助手，支持多种模型（API)，Multi-modal（txt/Image)
@@ -28,6 +28,19 @@ Them：Mobile GPT Assitant with vioce
 ![image.png](https://keriyar-images.oss-cn-qingdao.aliyuncs.com/img/202410242120997.png)
 
 ![image.png](https://keriyar-images.oss-cn-qingdao.aliyuncs.com/img/202410242121964.png)
+
+
+- 功能实现：
+	- 界面设计：
+		- 根据上图样例，设计一致的界面UI与逻辑顺序
+		- 界面UI：图形的样式、文本的样式
+		- 逻辑顺序：界面的跳转逻辑与顺序、图形/按钮对应的功能
+	- 数据存储
+		- 单个Chat显示：存储向模型发送的数据（txt/image）与模型响应回调的数据，以聊天框的形式显示出来
+		- 选择历史Chat：存储历史交互记录，根据选择进行相应的选取调用
+	- API接口调用处理：
+		- 创建API：到Azure OpenAI 平台部署模型API。
+		- 处理Json data： 根据选择的不同模型，处理用户发送的数据，将数据通过API接口发送Json。对模型响应的Json数据进行处理，形成（txt/image）。
 
 ### 3. 非功能需求
 
@@ -73,7 +86,9 @@ Them：Mobile GPT Assitant with vioce
 
 2. **资源需求**：
 [发现一个超级工具，免费获取Open AI的API key，包含GPT4和GPT3.5，轻松解锁海量顶尖AI工具 - 知乎](https://zhuanlan.zhihu.com/p/683550238)
+
+
 [阿里云语音最新教程12-25_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1Ta41167kv/?spm_id_from=333.337.search-card.all.click&vd_source=4edff91f055c6a0c3cdd8c6d63c570f6)
 
-
+[手把手教你如何调用Azure OpenAI API并使用GPT3.5/GPT4大模型 - 知乎](https://zhuanlan.zhihu.com/p/674880947)
 
