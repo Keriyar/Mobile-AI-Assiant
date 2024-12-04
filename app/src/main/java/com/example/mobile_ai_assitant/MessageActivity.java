@@ -11,13 +11,13 @@ import androidx.core.view.WindowInsetsCompat;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class MainActivity extends AppCompatActivity {
+public class MessageActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_message);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -25,6 +25,20 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    void callAPI(String question)
+    {
+        //okhttp
+        JSONObject jsonBody = new JSONObject();
+        try {
+            jsonBody.put("model","gpt-3.5-turbo");
+            jsonBody.put("message",question);
+            jsonBody.put("max_tokens",4000);
+            jsonBody.put("temperature",0);
+        } catch (JSONException e) {
+            throw new RuntimeException(e);
+        }
 
 
+
+    }
 }
