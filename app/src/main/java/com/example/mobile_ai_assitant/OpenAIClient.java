@@ -1,10 +1,11 @@
 package com.example.mobile_ai_assitant;
 
 import android.annotation.SuppressLint;
-import android.util.Log;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.io.IOException;
 
@@ -16,23 +17,17 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 import okhttp3.ResponseBody;
-import okio.BufferedSource;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
-
-
-public class OpenAIClient extends AppCompatActivity {
+public class OpenAIClient {
 
     private static final String API_URL = "https://api.chatanywhere.tech/v1/chat/completions";
 
-    private final String message;       // 用户输入的消息
-    private final String model;         // 模型名称（如 gpt-4）
-    private final String apiKey;        // OpenAI API 密钥
-    private final Boolean isStream;     // 是否启用流式响应
-    private final Double temperature;  // 控制生成随机性的温度值
+    private final String message;
+    private final String model;
+    private final String apiKey;
+    private final Boolean isStream;
+    private final Double temperature;
 
-    // 构造函数
     public OpenAIClient(String apiKey, String model, String message, Boolean isStream, Double temperature) {
         this.message = message;
         this.model = model;
@@ -40,8 +35,6 @@ public class OpenAIClient extends AppCompatActivity {
         this.isStream = isStream;
         this.temperature = temperature;
     }
-
-    // 构造请求体
     @SuppressLint("NewApi") // 忽略版本兼容性问题
     public String getRequestBody() {
         return """
@@ -55,12 +48,12 @@ public class OpenAIClient extends AppCompatActivity {
                 }
                 """.formatted(model, message, temperature, isStream);
     }
-    //回调接口
+
     public interface ResponseCallback {
         void onSuccess(String content);
         void onError(String error);
     }
-    //发送请求
+
     public void sendRequest(ResponseCallback callback) {
         OkHttpClient client = new OkHttpClient();
 
@@ -81,7 +74,7 @@ public class OpenAIClient extends AppCompatActivity {
             }
 
             @Override
-            public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
+            public void onResponse(@NonNull Call call, @NonNull Response response) {
                 if (!response.isSuccessful()) {
                     if (callback != null) {
                         callback.onError("Request failed: " + response);
@@ -107,6 +100,4 @@ public class OpenAIClient extends AppCompatActivity {
             }
         });
     }
-
-
 }

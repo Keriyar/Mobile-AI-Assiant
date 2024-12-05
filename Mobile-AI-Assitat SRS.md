@@ -1,7 +1,5 @@
 
 Them：Mobile GPT Assitant with vioce
-
-
 [Keriyar/Mobile-AI-Assitant: Mobile GPT Assitant with vioce](https://github.com/Keriyar/Mobile-AI-Assitant)
 ### 1. 项目概述
 - **项目名称**：AI Vioce Assitant
@@ -10,7 +8,7 @@ Them：Mobile GPT Assitant with vioce
 
 ### 2. 功能需求
 - **功能列表**：
-	- 功能1：用户自主选择模型（GPT-4o，GPT-3.5，Claude）
+	- 功能1：用户自主选择模型（GPT-4o-mini，GPT-3.5，Claude）
 		- 根据模型的不同选择对应的API
 	- 功能2：实现模型API的接入、转化、显示
 		  - 将接收到的API（JSON格式）转换为可显示的文本/图片
@@ -33,14 +31,14 @@ Them：Mobile GPT Assitant with vioce
 
 
 - 功能实现：
-	- 界面设计：（宋云旭）
+	- 界面设计：
 		- 根据上图样例，设计一致的界面UI与逻辑顺序
 		- 界面UI：图形的样式、文本的样式
 		- 逻辑顺序：界面的跳转逻辑与顺序、图形/按钮对应的功能
-	- 数据存储：（吴方浩）
+	- 数据存储
 		- 单个Chat显示：存储向模型发送的数据（txt/image）与模型响应回调的数据，以聊天框的形式显示出来
 		- 选择历史Chat：存储历史交互记录，根据选择进行相应的选取调用
-	- API接口调用处理：（胡锡宇）
+	- API接口调用处理：
 		- 创建API：到Azure OpenAI 平台部署模型API。
 		- 处理Json data： 根据选择的不同模型，处理用户发送的数据，将数据通过API接口发送Json。对模型响应的Json数据进行处理，形成（txt/image）。
 
@@ -87,8 +85,6 @@ Them：Mobile GPT Assitant with vioce
    - 测试与优化：1天。
 
 2. **资源需求**：
-
-
 [发现一个超级工具，免费获取Open AI的API key，包含GPT4和GPT3.5，轻松解锁海量顶尖AI工具 - 知乎](https://zhuanlan.zhihu.com/p/683550238)
 
 
@@ -96,3 +92,12 @@ Them：Mobile GPT Assitant with vioce
 
 [手把手教你如何调用Azure OpenAI API并使用GPT3.5/GPT4大模型 - 知乎](https://zhuanlan.zhihu.com/p/674880947)
 
+
+
+
+### 7.环境配置
+版本控制：Git
+构建工具：Gradle
+JDK：17
+Java Language Level：17
+API_KEY：sk-DwGTSy9YdgwOnyckUkD7QQQcWlGRz87adkWLDUiZiWRGiQVf（获取方式：GPT_API_free）
