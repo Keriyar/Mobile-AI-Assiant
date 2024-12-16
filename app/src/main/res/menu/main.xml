@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/choice0"
+        android:checkable="false"
+        android:icon="@android:drawable/button_onoff_indicator_on"
+        android:title="模型" />
+    <item android:id="@+id/choice1" android:title="gpt-4o"/>
+    <item android:id="@+id/choice2" android:title="gpt-3.5-turbo"/>
+    <item android:id="@+id/choice3" android:title="gpt-4o mini"/>
+    <item android:id="@+id/choice4" android:title="gpt-4" />
+</menu>

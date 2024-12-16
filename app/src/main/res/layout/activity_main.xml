@@ -1,23 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:orientation="vertical">
 
-
-    <!-- 用于展示 API 返回内容的 TextView -->
-    <TextView
-        android:id="@+id/responseTextView"
+    <RelativeLayout
+        android:id="@+id/top_bar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="16dp"
-        android:text="等待 API 返回结果..."
-        android:textSize="16sp"
-        android:gravity="start|top"
-        android:scrollbars="vertical"
-        android:background="#EEEEEE" />
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/white">
 
+
+        <ImageView
+            android:id="@+id/zuoshangjiao"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/baseline_sort_24"
+            android:layout_alignParentStart="true"
+            android:layout_marginEnd="30dp"
+            android:layout_centerVertical="true"/>
+
+
+
+
+        <TextView
+            android:id="@+id/title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ChatGPT 4o"
+            android:textColor="#000"
+            android:layout_centerInParent="true"/>
+
+
+        <Button
+            android:id="@+id/more_options"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:background="@drawable/writepen"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="16dp"
+            android:layout_centerVertical="true"/>
+    </RelativeLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:gravity="center"-->
+<!--            android:orientation="vertical">-->
+
+
+<!--            <ImageView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="@drawable/chatgptlogo">-->
+
+<!--            </ImageView>-->
+
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:textSize="30dp"-->
+<!--                android:text="嗨，我能帮什么忙吗？"-->
+<!--                android:layout_marginTop="16dp" />-->
+
+
+
+<!--        </LinearLayout>-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/msg_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rectangle_shape">
+            <EditText
+                android:id="@+id/message_input"
+                android:drawablePadding="20dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="给“ChatGpt”发送消息"
+                android:maxLines="1" />
+
+            <Button
+                android:id="@+id/send_button"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:background="@drawable/buttonselect"
+                android:drawable="@drawable/chatgptlogo" />
+
+
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="“ChatGpt”工作空间聊天未用于训练我们的模型。ChatGpt也可能会犯错。"
+            android:textSize="12dp">
+
+        </TextView>
+
+    </LinearLayout>
 </LinearLayout>

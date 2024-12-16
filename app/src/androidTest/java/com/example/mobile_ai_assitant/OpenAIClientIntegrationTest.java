@@ -9,7 +9,7 @@ import static org.junit.Assert.*;
 
 public class OpenAIClientIntegrationTest {
 
-    private static final String API_KEY = "sk-DwGTSy9YdgwOnyckUkD7QQQcWlGRz87adkWLDUiZiWRGiQVf  "; // 替换为你的实际 API 密钥
+    private static final String API_KEY = "sk-DwGTSy9YdgwOnyckUkD7QQQcWlGRz87adkWLDUiZiWRGiQVf"; // 替换为你的实际 API 密钥
 
     @Test
     public void testActualNetworkRequestWithContentPrinting() {
